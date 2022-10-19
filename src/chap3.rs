@@ -81,12 +81,67 @@
 // other low-level langs do not protect and can access invalid mem
 // rust will immediately exit instead of allowing 
 
+
+// Functions
+// snake_case
+// fn definition order does not matter, but needs to be in same scope
+// parameters - defined vars in signature
+// arguments - concrete values used with fn call at runtime
+// params always typed, allows compiler to help w/ error messages at call sites
+// function bodies made up of a series of statements optionally ending in an expression
+// Rust is an expression based lang
+// statements do not return a value
+// expressions evaluate to a resulting value
+// ex. let y = 6 // statement: does not return a value
+// let x = y = 5 // does not work in Rust
+//  fn and macro calls are expressions
+// blocks are expressions
+// {
+//   let x = 3;
+//   x + 1  // no semicolon (thus expression), adding a ; makes it a statement w/o return value
+// } // returns 4
+
+
+// Control flow
+
+// if expressions
+// condition must be a bool
+// expr can be used as right side of let
+// let number = if condition { 5 } else {6};
+// arms of if/else must match in type
+
+// loops
+// loop, while, for 
+// loop - infinite until break
+// also can be expr
+// let result = loop {
+//     counter += 1; 
+//     if counter == 10 {
+//         break counter * 2;
+//     }
+// } // 20
+
+// loop labels
+// 'label_name: loop {
+//    break 'label_name; 
+// }
+
+// while
+// let mut number = 3;
+// while number != 0 {}
+// while index < 5 { a[index] } // sub optimal as array bounds checks needed at runtime
+
+// for elem in a { // better option, fewer bugs & more saftey
+// for number in (1..4).rev() // 3, 2, 1: end non inclusice, rev() = reverse range
+
+
 fn main() {
     let i = 5;
     let a = [3;3];
     let x = a[i];
     println!("{x}")
 }
+
 
 
 
